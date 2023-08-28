@@ -28,14 +28,27 @@ const mainMenuTemplate = [
     label: "BNet",
     submenu: [
       {
-        label: "todo oluştur",
+        label: "bişeyler",
+      },
+    ],
+    submenu: [
+      {
+        label: "geliştirici seçenekleri",
       },
     ],
   },
-  {
-    label: "Ayarlar",
-  },
 ];
+
+// app.whenReady().then(() => {
+//   ipcMain.on("show-notification", (event, data) => {
+//     const notification = new Notification({
+//       title: data.title,
+//       body: data.body,
+//     });
+
+//     notification.show();
+//   });
+// });
 
 app.on("ready", createWindow);
 

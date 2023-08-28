@@ -4,6 +4,8 @@ import Test from "./Test";
 import { useEffect } from "react";
 import { getCountry } from "./redux/features/country/countrySlice";
 
+// import { ipcRenderer } from "electron";
+
 function App() {
   const dispatch = useDispatch();
 
@@ -15,6 +17,13 @@ function App() {
   useEffect(() => {
     dispatch(getCountry());
   }, []);
+
+  // const notification = () => {
+  //   ipcRenderer.send("show-notification", {
+  //     title: "Butona Tıklandı",
+  //     body: "Butona tıklandı, bildirim gönderildi!",
+  //   });
+  // };
 
   return (
     <div className="App">
@@ -34,6 +43,9 @@ function App() {
         </button>
       </div>
       <Test />
+      {/* <button aria-label="notification value" onClick={() => notification()}>
+        Decrement
+      </button> */}
     </div>
   );
 }
