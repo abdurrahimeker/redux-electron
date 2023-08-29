@@ -28,7 +28,12 @@ function App() {
 
   return (
     <div className="App">
-      <div>
+      <div className="container">
+        <div className="side"></div>
+        <div className="chat-list"></div>
+        <div className="message-list"></div>
+      </div>
+      {/* <div>
         <button onClick={() => dispatch(test("artir"))}>Increment</button>
         <span>{counter}</span>
         <button onClick={() => dispatch(test("azalt"))}>Decrement</button>
@@ -36,7 +41,7 @@ function App() {
       <Test />
       <button aria-label="notification value" onClick={() => notification()}>
         Notification
-      </button>
+      </button> */}
     </div>
   );
 }

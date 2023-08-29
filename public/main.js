@@ -11,7 +11,7 @@ function createWindow() {
     height: 600,
     backgroundColor: "#00000000", // Pencerenin arkaplan rengini ayarlar (şu an tamamen saydam)
     transparent: true,
-    frame: false,
+    frame: false, // Pencerenin title bar
     webPreferences: {
       nodeIntegration: true, // React ile Node.js entegrasyonunu etkinleştirin
     },
@@ -36,6 +36,10 @@ const mainMenuTemplate = [
       },
       {
         label: "geliştirici seçenekleri",
+        click: function () {
+          mainWindow.webContents.openDevTools();
+          // this needs to be figured out
+        },
       },
     ],
   },
