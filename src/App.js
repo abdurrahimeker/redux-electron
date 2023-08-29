@@ -3,8 +3,9 @@ import { test } from "./redux/features/counter/counterSlice";
 import Test from "./Test";
 import { useEffect } from "react";
 import { getCountry } from "./redux/features/country/countrySlice";
+import "./App.css";
 
-// import { ipcRenderer } from "electron";
+// const { ipcRenderer } = require("electron");
 
 function App() {
   const dispatch = useDispatch();
@@ -18,34 +19,24 @@ function App() {
     dispatch(getCountry());
   }, []);
 
-  // const notification = () => {
-  //   ipcRenderer.send("show-notification", {
-  //     title: "Butona Tıklandı",
-  //     body: "Butona tıklandı, bildirim gönderildi!",
-  //   });
-  // };
+  const notification = () => {
+    // ipcRenderer.send("show-notification", {
+    //   title: "Başlık",
+    //   body: "Bildirim içeriği burada.",
+    // });
+  };
 
   return (
     <div className="App">
       <div>
-        <button
-          aria-label="Increment value"
-          onClick={() => dispatch(test("artir"))}
-        >
-          Increment
-        </button>
+        <button onClick={() => dispatch(test("artir"))}>Increment</button>
         <span>{counter}</span>
-        <button
-          aria-label="Decrement value"
-          onClick={() => dispatch(test("azalt"))}
-        >
-          Decrement
-        </button>
+        <button onClick={() => dispatch(test("azalt"))}>Decrement</button>
       </div>
       <Test />
-      {/* <button aria-label="notification value" onClick={() => notification()}>
-        Decrement
-      </button> */}
+      <button aria-label="notification value" onClick={() => notification()}>
+        Notification
+      </button>
     </div>
   );
 }

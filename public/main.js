@@ -1,4 +1,5 @@
-const { app, BrowserWindow, Menu } = require("electron");
+const { app, BrowserWindow, Menu, Notification } = require("electron");
+
 const path = require("path");
 const url = require("url");
 
@@ -8,6 +9,9 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    backgroundColor: "#00000000", // Pencerenin arkaplan rengini ayarlar (şu an tamamen saydam)
+    transparent: true,
+    frame: false,
     webPreferences: {
       nodeIntegration: true, // React ile Node.js entegrasyonunu etkinleştirin
     },
@@ -30,8 +34,6 @@ const mainMenuTemplate = [
       {
         label: "bişeyler",
       },
-    ],
-    submenu: [
       {
         label: "geliştirici seçenekleri",
       },
@@ -39,15 +41,13 @@ const mainMenuTemplate = [
   },
 ];
 
-// app.whenReady().then(() => {
-//   ipcMain.on("show-notification", (event, data) => {
-//     const notification = new Notification({
-//       title: data.title,
-//       body: data.body,
-//     });
-
-//     notification.show();
+// ipcMain.on("show-notification", (event, args) => {
+//   const { title, body } = args;
+//   const notification = new Notification({
+//     title: title,
+//     body: body,
 //   });
+//   notification.show();
 // });
 
 app.on("ready", createWindow);

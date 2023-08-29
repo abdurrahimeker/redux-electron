@@ -13,12 +13,13 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.2",
     "react-scripts": "5.0.1",
+    "sass": "^1.66.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "electron .", 
-    "serve": "react-scripts start", 
-    "build": "react-scripts build", 
+    "start": "electron .",
+    "serve": "react-scripts start",
+    "build": "react-scripts build",
     "electron": "electron .",
     "electron-build": "npm run build && electron ."
   },
@@ -41,6 +42,8 @@
     ]
   },
   "devDependencies": {
-    "electron": "^26.1.0"
+    "electron": "^26.1.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }
